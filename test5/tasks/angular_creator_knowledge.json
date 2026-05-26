@@ -1,0 +1,78 @@
+{
+  "_v": 1,
+  "_fetched_at": 1779775487.185945,
+  "latest_versions": {
+    "@angular/core": "21.2.14",
+    "@angular/cli": "21.2.12",
+    "@angular/material": "21.2.12",
+    "@angular/cdk": "21.2.12",
+    "@angular/pwa": "21.2.12",
+    "@ngrx/store": "21.1.0",
+    "@ngrx/effects": "21.1.0",
+    "@ngrx/entity": "19.x",
+    "@ngrx/component-store": "19.x",
+    "rxjs": "7.8.2",
+    "zone.js": "0.16.2"
+  },
+  "scaffold_bases": [
+    "npm init @angular@latest",
+    "npx @angular/cli@latest new",
+    "npx @angular/cli@next new"
+  ],
+  "ng_new_flags": {
+    "--routing": "Add Angular Router",
+    "--standalone": "Use standalone component API (default true in v17+)",
+    "--strict": "Enable strict type-checking (default true)",
+    "--style=css": "Use CSS stylesheets",
+    "--style=scss": "Use SCSS stylesheets",
+    "--style=sass": "Use Sass stylesheets",
+    "--style=less": "Use Less stylesheets",
+    "--style=tailwind": "Use Tailwind CSS (v19+)",
+    "--ssr": "Enable Server-Side Rendering / SSG",
+    "--zoneless": "Disable zone.js (Angular 18+)",
+    "--minimal": "Minimal workspace (no test framework)",
+    "--skip-tests": "Skip spec.ts generation",
+    "--inline-style": "Inline styles in component file",
+    "--inline-template": "Inline template in component file",
+    "--prefix=<prefix>": "Component selector prefix (default: app)",
+    "--view-encapsulation=": "Emulated | None | ShadowDom",
+    "--test-runner=vitest": "Use Vitest instead of Karma (v19+)",
+    "--file-name-style-guide=2016": "Use 2016-style filenames (app.component.ts)",
+    "--file-name-style-guide=2025": "Use 2025-style filenames (app.ts)"
+  },
+  "dev_cmds": {
+    "npm": "npm start",
+    "pnpm": "pnpm start",
+    "yarn": "yarn start",
+    "bun": "bun start"
+  },
+  "install_cmds": {
+    "npm": "npm install",
+    "pnpm": "pnpm install",
+    "yarn": "yarn install",
+    "bun": "bun install"
+  },
+  "non_interactive_flags": "--defaults --skip-git",
+  "pm_create_cmd": {
+    "win32__node24": {
+      "angular_npm": "npx @angular/cli@latest new"
+    }
+  },
+  "bad_strategies": {
+    "win32__node24": [
+      "win32__node24__base0_npm"
+    ]
+  },
+  "yarn_version": {},
+  "project_journal": [
+    {
+      "machine": "win32__node24",
+      "pm": "npm",
+      "project": "anguler",
+      "flags": [],
+      "worked": true,
+      "landing_healthy": true,
+      "ts": "2026-05-26 12:07:22"
+    }
+  ]
+}
