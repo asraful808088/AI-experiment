@@ -1,0 +1,27 @@
+{
+  "name": "list_installed_software",
+  "description": "List all installed software from Windows registry",
+  "tags": [
+    "system",
+    "software",
+    "installed",
+    "windows",
+    "programs"
+  ],
+  "aliases": [
+    "installed software",
+    "installed programs",
+    "list software",
+    "what is installed",
+    "programs list"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script that reads the Windows registry to list all installed software.\nCheck all three uninstall keys:\n  HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\n  HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\n  HKLM\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\nUse winreg. For each subkey read: DisplayName, DisplayVersion, Publisher, InstallDate.\nSkip entries without a DisplayName. Sort alphabetically. Print as a table.\nShow total count at the end.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

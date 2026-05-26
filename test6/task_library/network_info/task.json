@@ -1,0 +1,30 @@
+{
+  "name": "network_info",
+  "description": "Show full network info: IPs, gateway, DNS, public IP, hostname",
+  "tags": [
+    "network",
+    "info",
+    "ip",
+    "system"
+  ],
+  "aliases": [
+    "network info",
+    "ip info",
+    "network details",
+    "show network",
+    "network status",
+    "ip address",
+    "my ip"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script to display complete network information using psutil and socket:\n  1. Hostname and local IP addresses for each interface (skip loopback)\n  2. Default gateway (parse from psutil.net_if_stats or use subprocess:      'route print' on Windows, 'ip route' on Linux)\n  3. DNS servers (parse ipconfig /all on Windows or /etc/resolv.conf on Linux)\n  4. Public/external IP via: requests.get('https://api.ipify.org').text\n  5. MAC address per interface\nPrint as a neatly formatted report.",
+  "last_working_code": "import psutil\nimport socket\nimport subprocess\nimport requests\n\ndef get_hostname_and_ip_addresses():\n    hostname = socket.gethostname()\n    ip_addresses = {interface: [addr.address for addr in addrs if addr.family == socket.AF_INET and '127.0.0.1' not in addr.address]\n                    for interface, addrs in psutil.net_if_addrs().items()}\n    return hostname, ip_addresses\n\ndef get_default_gateway():\n    try:\n        route_output = subprocess.run(['route', 'print'], capture_output=True, text=True)\n        lines = route_output.stdout.split('\\n')\n        for line in lines:\n            if '0.0.0.0' in line and '*' not in line:\n                return line.split()[3]\n    except Exception as e:\n        print(f\"Error getting default gateway: {e}\")\n        return None\n\ndef get_dns_servers():\n    try:\n        resolv_output = subprocess.run(['ipconfig', '/all'], capture_output=True, text=True)\n        lines = resolv_output.stdout.split('\\n')\n        dns_servers = [line.split(': ')[1].strip() for line in lines if 'DNS Servers' in line]\n        return dns_servers\n    except Exception as e:\n        print(f\"Error getting DNS servers: {e}\")\n        return None\n\ndef get_public_ip():\n    try:\n        return requests.get('https://api.ipify.org').text\n    except Exception as e:\n        print(f\"Error getting public IP: {e}\")\n        return None\n\ndef get_mac_addresses():\n    mac_addresses = {interface: addr.address for interface, addrs in psutil.net_if_addrs().items() if 'link/ether' in [a.family for a in addrs]}\n    return mac_addresses\n\ndef main():\n    hostname, ip_addresses = get_hostname_and_ip_addresses()\n    default_gateway = get_default_gateway()\n    dns_servers = get_dns_servers()\n    public_ip = get_public_ip()\n    mac_addresses = get_mac_addresses()\n\n    report = f\"\"\"\nHostname: {hostname}\nIP Addresses:\n{ip_addresses}\n\nDefault Gateway: {default_gateway}\nDNS Servers:\n{dns_servers}\n\nPublic IP: {public_ip}\nMAC Addresses:\n{mac_addresses}\n\"\"\"\n\n    print(report)\n\nif __name__ == \"__main__\":\n    main()",
+  "success_count": 1,
+  "fail_count": 0,
+  "last_run": "2026-05-25T13:37:34.961463",
+  "created_at": "2026-05-25T13:05:27.578752"
+}

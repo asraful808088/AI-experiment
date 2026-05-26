@@ -1,0 +1,27 @@
+{
+  "name": "wifi_passwords",
+  "description": "Show all saved WiFi network names and passwords",
+  "tags": [
+    "network",
+    "wifi",
+    "password",
+    "windows",
+    "wireless"
+  ],
+  "aliases": [
+    "wifi passwords",
+    "saved wifi",
+    "wifi profiles",
+    "show wifi passwords",
+    "wireless passwords"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script to list all saved WiFi passwords on Windows.\nStep 1: run subprocess: netsh wlan show profiles\n        parse all 'All User Profile' lines to get profile names.\nStep 2: for each profile run:         netsh wlan show profile name='<name>' key=clear\n        parse 'Key Content' line for the password.\nPrint: Network Name | Password (or '<No Password>'). Handle encoding issues with errors='ignore'.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

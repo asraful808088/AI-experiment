@@ -1,0 +1,26 @@
+{
+  "name": "clean_recycle_bin",
+  "description": "Empty the Windows Recycle Bin",
+  "tags": [
+    "system",
+    "cleanup",
+    "recycle",
+    "windows"
+  ],
+  "aliases": [
+    "empty recycle bin",
+    "clear recycle bin",
+    "empty trash",
+    "recycle bin",
+    "trash"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script to empty the Windows Recycle Bin using ctypes.\nUse: ctypes.windll.shell32.SHEmptyRecycleBinW(None, None, 0x0007)\n  flags: SHERB_NOCONFIRMATION=1 | SHERB_NOPROGRESSUI=2 | SHERB_NOSOUND=4 → 0x0007\nPrint success or error. If return code is 0 → success, else show error code.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

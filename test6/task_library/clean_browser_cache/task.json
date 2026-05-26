@@ -1,0 +1,29 @@
+{
+  "name": "clean_browser_cache",
+  "description": "Clear Chrome, Edge, and Firefox cache files",
+  "tags": [
+    "browser",
+    "cache",
+    "cleanup",
+    "chrome",
+    "edge",
+    "firefox"
+  ],
+  "aliases": [
+    "browser cache",
+    "clear browser cache",
+    "chrome cache",
+    "edge cache",
+    "clean cache",
+    "clear cache"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script to clear browser caches on Windows using shutil.rmtree:\n  Chrome:  %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Cache\n           %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Code Cache\n  Edge:    %LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Cache\n           %LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Code Cache\n  Firefox: find profile folder in %APPDATA%\\Mozilla\\Firefox\\Profiles\\            and clear cache2\\entries inside it\nFor each: measure size before, delete, report MB freed. Skip paths that do not exist. Print total MB freed.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

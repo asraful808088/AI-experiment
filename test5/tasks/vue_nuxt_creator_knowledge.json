@@ -1,0 +1,105 @@
+{
+  "_v": 2,
+  "_fetched_at": 1779557318.7604566,
+  "latest_versions": {
+    "vue": "3.5.34",
+    "nuxt": "4.4.6",
+    "vite": "8.0.14",
+    "pinia": "3.0.4",
+    "vue-router": "5.0.7",
+    "vitest": "4.1.7",
+    "@nuxt/ui": "4.8.0",
+    "@nuxtjs/tailwindcss": "6.14.0",
+    "@nuxtjs/color-mode": "4.0.0",
+    "@nuxt/content": "3.14.0",
+    "@nuxtjs/i18n": "10.4.0",
+    "@pinia/nuxt": "0.11.3"
+  },
+  "vue_flags": {
+    "--typescript": "Add TypeScript support",
+    "--jsx": "Add JSX support",
+    "--router": "Add Vue Router",
+    "--pinia": "Add Pinia state management",
+    "--vitest": "Add Vitest unit testing",
+    "--cypress": "Add Cypress e2e testing",
+    "--playwright": "Add Playwright e2e testing",
+    "--nightwatch": "Add Nightwatch e2e testing",
+    "--eslint": "Add ESLint",
+    "--prettier": "Add Prettier",
+    "--oxlint": "Add Oxlint (faster linter)",
+    "--rolldown-vite": "Use Rolldown-Vite (experimental)",
+    "--default": "Accept all defaults (non-interactive)"
+  },
+  "nuxt_flags": {
+    "--gitInit": "Initialize git repository",
+    "--no-install": "Skip npm install after scaffold",
+    "--offline": "Use local cache only",
+    "--preferOffline": "Prefer local cache",
+    "--nightly": "Use nightly Nuxt build",
+    "--template": "Specify starter template or GitHub repo",
+    "--force": "Overwrite existing directory",
+    "--packageManager": "npm | pnpm | yarn | bun",
+    "--modules": "Comma-separated Nuxt modules to add"
+  },
+  "vue_create_cmds": {
+    "npm": "npm create vue@latest",
+    "pnpm": "pnpm create vue@latest",
+    "yarn": "yarn create vue@latest",
+    "bun": "bun create vue@latest"
+  },
+  "nuxt_create_cmds": {
+    "npm": "npm create nuxt@latest",
+    "pnpm": "pnpm create nuxt@latest",
+    "yarn": "yarn create nuxt@latest",
+    "bun": "bun create nuxt@latest",
+    "npx_nuxi": "npx nuxi@latest init",
+    "npx_create": "npx create-nuxt-app"
+  },
+  "vue_dev_cmds": {
+    "npm": "npm run dev",
+    "pnpm": "pnpm dev",
+    "yarn": "yarn dev",
+    "bun": "bun dev"
+  },
+  "nuxt_dev_cmds": {
+    "npm": "npm run dev",
+    "pnpm": "pnpm dev",
+    "yarn": "yarn dev",
+    "bun": "bun dev"
+  },
+  "install_cmds": {
+    "npm": "npm install",
+    "pnpm": "pnpm install",
+    "yarn": "yarn install",
+    "bun": "bun install"
+  },
+  "pm_create_cmd": {
+    "win32__node24": {
+      "nuxt_npm": "npx nuxi@latest init"
+    }
+  },
+  "bad_strategies": {},
+  "yarn_version": {},
+  "project_journal": [
+    {
+      "machine": "win32__node24",
+      "fw": "nuxt",
+      "pm": "npm",
+      "project": "kkkal",
+      "flags": [],
+      "worked": true,
+      "landing_healthy": true,
+      "ts": "2026-05-24 00:14:24"
+    },
+    {
+      "machine": "win32__node24",
+      "fw": "nuxt",
+      "pm": "npm",
+      "project": "kkkal",
+      "flags": [],
+      "worked": true,
+      "landing_healthy": true,
+      "ts": "2026-05-24 00:19:59"
+    }
+  ]
+}

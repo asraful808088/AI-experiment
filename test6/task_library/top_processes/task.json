@@ -1,0 +1,32 @@
+{
+  "name": "top_processes",
+  "description": "Show top 10 processes by CPU and RAM usage",
+  "tags": [
+    "system",
+    "process",
+    "cpu",
+    "ram",
+    "performance",
+    "memory"
+  ],
+  "aliases": [
+    "high cpu",
+    "top processes",
+    "cpu usage",
+    "heavy processes",
+    "ram usage",
+    "memory usage",
+    "process list"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script using psutil to:\n  1. List TOP 10 processes by CPU% (name, pid, cpu%, ram MB, status)\n  2. List TOP 10 processes by RAM (name, pid, ram MB, cpu%, status)\nWait 0.5s after calling cpu_percent(interval=None) to get accurate readings.\nSkip AccessDenied processes. Print as two neat ASCII tables.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

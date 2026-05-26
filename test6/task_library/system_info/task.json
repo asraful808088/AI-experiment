@@ -1,0 +1,33 @@
+{
+  "name": "system_info",
+  "description": "Show CPU, RAM, disk, OS, uptime and hardware info",
+  "tags": [
+    "system",
+    "info",
+    "hardware",
+    "cpu",
+    "ram",
+    "disk",
+    "specs"
+  ],
+  "aliases": [
+    "system info",
+    "pc info",
+    "hardware info",
+    "show system",
+    "specs",
+    "system specs",
+    "my pc"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script using platform, psutil, os to display:\n  1. OS: name, version, architecture, build\n  2. CPU: model (from platform.processor()), physical cores, logical cores,      current MHz, current usage %\n  3. RAM: total GB, used GB, free GB, usage %\n  4. Disks: for each partition — mount, total GB, used GB, free GB, usage %\n  5. Current user, hostname\n  6. System uptime (hours:minutes)\n  7. Python version\nFormat as a clean ASCII report with section headers.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

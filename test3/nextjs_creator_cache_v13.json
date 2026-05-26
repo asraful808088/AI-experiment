@@ -1,0 +1,34 @@
+{
+  "_v": 13,
+  "pm_create_cmd": {
+    "win32__node24": {
+      "npm": "npx create-next-app@latest"
+    }
+  },
+  "bad_strategies": {},
+  "yarn_version": {},
+  "project_journal": [
+    {
+      "machine": "win32__node24",
+      "pm": "npm",
+      "project": "lola",
+      "flags": [
+        "--yes"
+      ],
+      "worked": true,
+      "landing_healthy": true,
+      "ts": "2026-05-23 16:24:07"
+    },
+    {
+      "machine": "win32__node24",
+      "pm": "npm",
+      "project": "my-next-app",
+      "flags": [
+        "--yes"
+      ],
+      "worked": true,
+      "landing_healthy": true,
+      "ts": "2026-05-23 16:25:24"
+    }
+  ]
+}

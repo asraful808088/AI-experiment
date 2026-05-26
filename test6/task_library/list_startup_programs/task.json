@@ -1,0 +1,28 @@
+{
+  "name": "list_startup_programs",
+  "description": "List all programs set to run at Windows startup",
+  "tags": [
+    "system",
+    "startup",
+    "windows",
+    "registry",
+    "autorun"
+  ],
+  "aliases": [
+    "list startup",
+    "startup programs",
+    "show startup",
+    "startup list",
+    "autostart",
+    "boot programs"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script that lists ALL Windows startup programs from:\n  1. HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\n  2. HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\n  3. HKLM\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\n  4. %APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup (folder)\n  5. C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp (folder)\nUse winreg for registry keys. For each entry print: source, name, command/path.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

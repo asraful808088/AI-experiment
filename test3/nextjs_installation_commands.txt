@@ -1,0 +1,24 @@
+```bash
+pnpm create next-app@latest my-app --yes
+cd my-app
+pnpm dev
+
+npx create-next-app@latest my-app --yes
+cd my-app
+npm run dev
+
+yarn create next-app@latest my-app --yes
+cd my-app
+yarn dev
+
+bun create next-app@latest my-app --yes
+cd my-app
+bun dev
+
+pnpm i next@latest react@latest react-dom@latest
+npm i next@latest react@latest react-dom@latest
+yarn add next@latest react@latest react-dom@latest
+bun add next@latest react@latest react-dom@latest
+
+npm run dev
+```

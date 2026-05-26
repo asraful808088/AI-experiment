@@ -1,0 +1,29 @@
+{
+  "name": "open_ports",
+  "description": "Show all listening ports and which process owns them",
+  "tags": [
+    "network",
+    "ports",
+    "security",
+    "connections",
+    "firewall"
+  ],
+  "aliases": [
+    "open ports",
+    "listening ports",
+    "network ports",
+    "show ports",
+    "check ports"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script using psutil.net_connections(kind='inet') to list all LISTEN-state ports.\nFor each connection get the owning process name via psutil.Process(pid).\nColumns: Proto | Local Address | Port | PID | Process Name\nSort by port number. Handle AccessDenied for system processes.\nPrint as an ASCII table.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "you_check_https_nextjs_org_docs_app_getting_s",
+  "description": "you check https://nextjs.org/docs/app/getting-started/installation",
+  "tags": [],
+  "aliases": [
+    "you check https://nextjs.org/docs/app/getting-started/installation"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "you check https://nextjs.org/docs/app/getting-started/installation",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 1,
+  "summary": "The script attempted to create a Next.js project by installing Node.js if it wasn't already installed and then running the necessary commands to set up, build, and start the project. However, it failed during the creation of the Next.js project due to a `FileNotFoundError`, indicating that the system could not find the specified file (likely `npx`). This prevented the script from successfully completing its tasks.",
+  "last_run": "2026-05-25T14:10:08.133656",
+  "created_at": "2026-05-25T14:10:08.133656"
+}

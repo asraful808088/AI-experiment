@@ -1,0 +1,27 @@
+{
+  "name": "clean_temp",
+  "description": "Delete all files in %TEMP% and C:\\Windows\\Temp",
+  "tags": [
+    "system",
+    "cleanup",
+    "temp",
+    "windows"
+  ],
+  "aliases": [
+    "clean temp",
+    "clear temp",
+    "delete temp",
+    "clean temp files",
+    "empty temp",
+    "remove temp"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script that safely deletes all files and sub-folders inside:\n  1. os.environ.get('TEMP') or os.environ.get('TMP')\n  2. C:\\Windows\\Temp\nSkip locked / in-use files (catch PermissionError silently).\nTrack total files deleted and total MB freed.\nPrint a summary report: files deleted, folders deleted, MB freed.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.562606"
+}

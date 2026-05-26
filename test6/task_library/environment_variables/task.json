@@ -1,0 +1,30 @@
+{
+  "name": "environment_variables",
+  "description": "List all system environment variables",
+  "tags": [
+    "system",
+    "environment",
+    "env",
+    "variables",
+    "config"
+  ],
+  "aliases": [
+    "env variables",
+    "environment variables",
+    "show env",
+    "list env",
+    "environment",
+    "env vars"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script to display all environment variables from os.environ.\nGroup them into sections:\n  [SYSTEM PATHS]  — PATH, PATHEXT, SystemRoot, WINDIR, etc.\n  [USER]          — USERNAME, USERPROFILE, HOME, APPDATA, LOCALAPPDATA\n  [TEMP]          — TEMP, TMP\n  [OTHER]         — everything else, sorted alphabetically\nFor PATH: split by ; or : and print each entry on its own line, indented.\nPrint total variable count at the end.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.586590"
+}

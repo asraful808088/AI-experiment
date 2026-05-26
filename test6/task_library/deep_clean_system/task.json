@@ -1,0 +1,33 @@
+{
+  "name": "deep_clean_system",
+  "description": "Full Windows cleanup: temp, prefetch, recycle bin, caches, DNS",
+  "tags": [
+    "system",
+    "cleanup",
+    "all",
+    "full",
+    "windows",
+    "deep",
+    "cache"
+  ],
+  "aliases": [
+    "full cleanup",
+    "clean all",
+    "system cleanup",
+    "deep clean",
+    "full clean",
+    "deep system clean",
+    "clean everything",
+    "clear all cache",
+    "complete cleanup"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script to perform a FULL Windows system cleanup. Print a section header before each step and MB freed after each.\n\nStep 1 — TEMP FILES\n  Delete all files/folders in os.environ['TEMP'] and C:\\Windows\\Temp.\n\nStep 2 — PREFETCH\n  Check ctypes.windll.shell32.IsUserAnAdmin().   If admin: delete *.pf in C:\\Windows\\Prefetch. Else skip with warning.\n\nStep 3 — RECYCLE BIN\n  ctypes.windll.shell32.SHEmptyRecycleBinW(None, None, 0x0007)\n\nStep 4 — BROWSER CACHES\n  Chrome: %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Cache\n  Edge:   %LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Cache\n  Use shutil.rmtree on each; skip if path not found.\n\nStep 5 — DNS CACHE\n  subprocess.run(['ipconfig', '/flushdns'])\n\nStep 6 — WINDOWS UPDATE CACHE\n  Delete contents of C:\\Windows\\SoftwareDistribution\\Download\\   (requires admin; skip gracefully if not).\n\nStep 7 — THUMBNAIL CACHE\n  Delete files in %LOCALAPPDATA%\\Microsoft\\Windows\\Explorer\\ matching thumbcache_*.db\n\nAt the end print a grand total: 'TOTAL FREED: X.XX MB' and a per-step table.\nAlways skip locked files with PermissionError — never crash.",
+  "last_working_code": "import os\nimport shutil\nimport subprocess\nimport ctypes\n\ndef get_directory_size(directory):\n    try:\n        total_size = 0\n        for dirpath, dirnames, filenames in os.walk(directory):\n            for f in filenames:\n                fp = os.path.join(dirpath, f)\n                if not os.path.islink(fp):\n                    total_size += os.path.getsize(fp)\n        return total_size\n    except Exception as e:\n        print(f\"Error getting directory size: {e}\")\n        return 0\n\ndef delete_directory_contents(directory):\n    try:\n        for root, dirs, files in os.walk(directory, topdown=False):\n            for name in files:\n                os.remove(os.path.join(root, name))\n            for name in dirs:\n                shutil.rmtree(os.path.join(root, name))\n        return True\n    except PermissionError as e:\n        print(f\"Permission error deleting {directory}: {e}\")\n        return False\n\ndef main():\n    steps = [\n        (\"TEMP FILES\", os.environ['TEMP'], \"C:\\\\Windows\\\\Temp\"),\n        (\"PREFETCH\", \"C:\\\\Windows\\\\Prefetch\", ctypes.windll.shell32.IsUserAnAdmin()),\n        (\"RECYCLE BIN\", None, ctypes.windll.shell32.SHEmptyRecycleBinW(None, None, 0x0007)),\n        (\"BROWSER CACHES\", [os.path.expandvars('%LOCALAPPDATA%\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\Cache'),\n                            os.path.expandvars('%LOCALAPPDATA%\\\\Microsoft\\\\Edge\\\\User Data\\\\Default\\\\Cache')], None),\n        (\"DNS CACHE\", \"ipconfig /flushdns\", None),\n        (\"WINDOWS UPDATE CACHE\", \"C:\\\\Windows\\\\SoftwareDistribution\\\\Download\\\\\", ctypes.windll.shell32.IsUserAnAdmin()),\n        (\"THUMBNAIL CACHE\", os.path.expandvars('%LOCALAPPDATA%\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_*.db'), None)\n    ]\n\n    total_freed = 0\n    step_results = []\n\n    for i, (header, paths, admin_required) in enumerate(steps):\n        print(f\"\\nStep {i+1} — {header}\")\n        \n        freed = 0\n        if isinstance(paths, list):\n            for path in paths:\n                if os.path.exists(path):\n                    initial_size = get_directory_size(path)\n                    success = delete_directory_contents(path)\n                    if success:\n                        final_size = get_directory_size(path)\n                        freed += initial_size - final_size\n        elif isinstance(paths, str):\n            if admin_required and not ctypes.windll.shell32.IsUserAnAdmin():\n                print(\"Warning: Skipping this step as script is not running as an administrator.\")\n            else:\n                initial_size = get_directory_size(paths)\n                try:\n                    subprocess.run(paths.split(), check=True)\n                    final_size = get_directory_size(paths)\n                    freed += initial_size - final_size\n                except Exception as e:\n                    print(f\"Error: {e}\")\n        \n        if freed > 0:\n            freed_mb = freed / (1024 * 1024)\n            print(f\"{freed_mb:.2f} MB\")\n            total_freed += freed_mb\n        else:\n            print(\"0.00 MB\")\n\n        step_results.append((header, freed))\n\n    grand_total_mb = total_freed\n    print(f\"\\nTOTAL FREED: {grand_total_mb:.2f} MB\")\n    print(\"\\nPer-Step Results:\")\n    for header, freed in step_results:\n        print(f\"{header}: {'{:.2f}'.format(freed if freed > 0 else 0)} MB\")\n\nif __name__ == \"__main__\":\n    main()",
+  "success_count": 2,
+  "fail_count": 0,
+  "last_run": "2026-05-25T13:26:25.405505",
+  "created_at": "2026-05-25T13:05:27.586590"
+}

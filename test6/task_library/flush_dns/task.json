@@ -1,0 +1,27 @@
+{
+  "name": "flush_dns",
+  "description": "Flush Windows DNS resolver cache",
+  "tags": [
+    "network",
+    "dns",
+    "cache",
+    "windows"
+  ],
+  "aliases": [
+    "flush dns",
+    "clear dns",
+    "dns cache",
+    "reset dns",
+    "dns flush",
+    "clear dns cache"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script that flushes the Windows DNS cache by running:\n  subprocess.run(['ipconfig', '/flushdns'], capture_output=True, text=True)\nPrint the command output. Also reset the NetBIOS name cache:\n  subprocess.run(['nbtstat', '-R'], capture_output=True, text=True)\nPrint both results clearly.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

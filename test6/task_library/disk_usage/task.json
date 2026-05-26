@@ -1,0 +1,30 @@
+{
+  "name": "disk_usage",
+  "description": "Show disk space usage for all drives with bar chart",
+  "tags": [
+    "system",
+    "disk",
+    "storage",
+    "space",
+    "drives"
+  ],
+  "aliases": [
+    "disk usage",
+    "disk space",
+    "storage info",
+    "drive space",
+    "free space",
+    "hard drive space"
+  ],
+  "os": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "task_prompt": "Write a Python script to show disk usage for every mounted partition.\nUse psutil.disk_partitions() and psutil.disk_usage().\nFor each drive print:\n  Drive | Total GB | Used GB | Free GB | Usage% | [ASCII bar 20 chars]\nBar: filled with '█', empty with '░'. Example: ████████░░░░░░░░░░░░ 43%\nSkip drives that raise PermissionError. Print grand total at the end.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}

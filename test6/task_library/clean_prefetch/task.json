@@ -1,0 +1,26 @@
+{
+  "name": "clean_prefetch",
+  "description": "Delete Windows Prefetch (.pf) files",
+  "tags": [
+    "system",
+    "cleanup",
+    "prefetch",
+    "windows"
+  ],
+  "aliases": [
+    "clean prefetch",
+    "clear prefetch",
+    "delete prefetch",
+    "prefetch files",
+    "prefetch"
+  ],
+  "os": [
+    "windows"
+  ],
+  "task_prompt": "Write a Python script to delete all *.pf files from C:\\Windows\\Prefetch.\nFirst check admin rights: import ctypes; is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0\nIf not admin, print a warning but continue (some files may be skippable).\nSkip locked files gracefully. Print count deleted and MB freed.",
+  "last_working_code": null,
+  "success_count": 0,
+  "fail_count": 0,
+  "last_run": null,
+  "created_at": "2026-05-25T13:05:27.578752"
+}
